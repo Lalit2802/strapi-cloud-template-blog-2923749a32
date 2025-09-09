@@ -8,7 +8,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    files: Schema.Attribute.Media<'images', true>;
+    files: Schema.Attribute.Media<'images', true>; // already multiple
   };
 }
 
@@ -23,7 +23,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
   attributes: {
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
+    shareImage: Schema.Attribute.Media<'images', true>;
   };
 }
 
@@ -58,7 +58,7 @@ export interface SharedMedia extends Struct.ComponentSchema {
     icon: 'file-video';
   };
   attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    file: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
   };
 }
 
